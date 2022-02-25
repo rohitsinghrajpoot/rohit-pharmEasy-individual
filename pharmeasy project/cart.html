@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Navbar.css">
+    <link rel="stylesheet" href="./css/download.css">
+</head>
+<style>
+    #getdata{
+        width:300px;
+        height:190px;
+        margin-left:200px;
+        margin-bottom: 30px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+        padding-left: 10px;
+        padding-top: 8px;
+    }
+    #lw{
+        width: 100px;
+        height:70px;
+    }
+    #cont{
+        margin-top:100px;
+       
+        
+    }
+    #orderSummary{
+       margin-top: 100px;
+       box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        margin-left: 200px;
+        width: 300px;
+        height:200px;
+        padding:10px;
+    }
+    #father{
+        display:flex;
+    }
+</style>
+<body>
+
+<div id="container"></div>
+ 
+<div id="father"><div id="cont"></div>   
+ <div id="orderSummary">
+     <h3>Order Summary</h3>
+     <p id="boom"></p>
+     <p>Delivery Charge :  FREE</p  ><hr>
+        <h2></h2>
+ </div>
+  <div></div>
+
+</div>
+
+
+      <div>
+          <h3>Additional Notes</h3>
+          <p>A licensed pharmacy would be delivering your order basis availability of product & fastest delivery.<br>  
+            Prices are indicative and may change after billing<br>
+            PharmEasy is a technology platform to connect sellers and buyers and is not involved in sales of any product. Offer for sale on the products and services are provided/sold by the sellers only. For detail read  Terms and Conditions</p>
+      </div>
+
+      <div id="download"></div>
+
+      <h3>Our payment partners</h3>
+
+      <div id="payment"></div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js"
+let container_div = document.getElementById("container")
+container_div.innerHTML=navbar()
+ 
+import downloadApp from "./components/download.js"
+
+let download_container = document.getElementById("download")
+download_container.innerHTML = downloadApp()
+
+import paymentMethod from "./components/payment.js"
+  
+let payment_container = document.getElementById("payment")
+payment_container.innerHTML= paymentMethod()
+
+var static_array= JSON.parse(localStorage.getItem("Cart"))||[]
+ displayCart(static_array)
+ updateCartTotal(static_array)
+    //  
+   
+     
+// 
+  function displayCart(static_array){
+      
+      static_array.map(function(elem){
+     var div= document.createElement("div")
+      div.id="getdata"
+      var imag=document.createElement("img")
+        imag.id="lw"
+         
+     var h3 =document.createElement("h3")
+      
+     var h4=document.createElement("h4")
+     h4.id="pricetag"
+
+     imag.src = elem.Img;
+      h3.textContent=elem.heading;
+      h4.textContent=elem.price;
+      div.append(imag,h3,h4)
+      document.getElementById("cont").append(div)
+
+      })
+      
+  }
+
+  function updateCartTotal(static_array){
+     var parr =[]
+      var SUM=0;
+    for(var p=0;p<static_array.length;p++){
+      var Uprice= static_array[p].price
+      var PriceNum= +Uprice.replace( /^\D+/g, '')
+       parr.push(PriceNum)
+       SUM+=parr[p]
+       
+    }   
+          document.getElementById("boom").textContent= `Cart Value : ${SUM}`
+          document.querySelector("#father>#orderSummary>h2").textContent= `Amount To Be Paid = ${SUM}`
+  }
+     
+</script>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Navbar.css">
+    <link rel="stylesheet" href="./css/download.css">
+</head>
+<style>
+    #timerbox{
+      width:60%;
+      height:290px;
+      margin-bottom: 70px;
+      margin-left:240px;
+      margin-top: 100px;
+   }
+   #images{
+       width: 100%;
+       height:100%;
+   }
+   #hardcore{
+       width:50%;
+       margin-left: 180px;
+       margin-top: 50px;
+   }
+   #voilet{
+       width:70%;
+       height:70px;
+       margin-left: 180px;
+       margin-top:50px;
+       background-color: blueviolet;
+      display: flex;
+      color:white;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 100px;
+   }
+</style>
+<body>
+    <div id="container"></div>
+
+    <div id="timerbox">
+        <image id="images" alt="img"></image>
+    </div>
+    
+    <div id="hardcore">
+    <image src="https://cdn01.pharmeasy.in/dam/banner/banner/67a4b87fd2f-Trustmarkernew.png"></image></div>
+    
+    <div id="voilet">
+          <image src="https://assets.pharmeasy.in/web-assets/dist/3864b471.svg"></image>
+          <h3>save flat 5% extra on medicines & enjoy FREE deliviry with PLUS membership</h3>
+    </div>
+
+    <div>
+        <h3>The (Pharm)Easy Way To Book Lab Tests Online</h3>
+        <p>Book Diagnostics Lab Test Online. Get doorstep sample collection</p>
+        <h3>Lab Test Booking Made Simple</h3>
+        <p>One of the most popular services PharmEasy offers is diagnostic testing. People need to book pathological tests for many reasons. But before booking, they wonder if the diagnostic centre can be trusted to produce accurate results and how long they might have to wait in a queue to get tested.
+            To bypass these hassles, PharmEasy has set up an extensive network of reputed pathological laboratories in India. One such lab is Thyrocare. With Thyrocare on board, we can give you access to a wide network of diagnostic laboratories.We also offer a home collection of samples as well. Bid adieu to anxious days of wondering where to book diagnostic tests and embrace the PharmEasy way.</p>
+       <h3>Lab tests at your doorstep</h3>
+       <p>To ease your anxieties, PharmEasy offers the facility of doorstep collection. The technician will come to your house to collect samples. And all safety precautions are maintained. A fresh collection kit and/or needle will be used so that there is no contamination of samples of the spread of diseases. We use special ice boxes that meet NABL guidelines to transport your samples. The reports will be sent to you online. That means you won’t have to travel to the diagnostic lab to collect your reports.</p>
+        <h3>How can you book diagnostic tests online?</h3>
+        <p>Booking a test on PharmEasy is simple
+            Visit https://pharmeasy.in/diagnostics or click on Lab Tests on the PharmEasy website or app.
+            Upload your prescription or choose the lab test from the search box.
+            Alternatively, you can call our customer service team on 7022000900 and they will make the booking for you</p>
+          <h3>Looking to book a pathology test? Here’s how PharmEasy can help!</h3>
+          <p>Online diagnostic tests work as smoothly as clockwork. Once you’ve booked the pathology test you need with the diagnostic centre you prefer, you will get a confirmation on your registered e-mail id and SMS. The backend support team might also call you to confirm the booking.Post this our expert technician will arrive at your place at the selected slot and collect your sample for processing at our state of the art labs. Reports will be shared with you over SMS and will also be available in your account on app/web.</p>
+     <h3>Why choose PharmEasy to book lab tests?</h3>
+     <p>We can give you reasons galore for choosing PharmEasy-
+        2 Lac+ happy customers
+        Safe home sample collection
+        Up to 70% OFF
+        Certified & 100% Automated labs
+        Timely and accurate reports
+        500+ tests and health packs to choose from
+        Now that you know why PharmEasy can be your trusted diagnostic test booking partner, don’t wait, download the PharmEasy app today and book a health check right away.</p>
+        </div>
+
+        <div id="download"></div>
+
+        <h3>Our payment partners</h3>
+
+        <div id="payment"></div>
+
+
+</body>
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js"
+let container_div = document.getElementById("container")
+container_div.innerHTML=navbar()
+
+var arr =[
+    "https://cms-contents.pharmeasy.in/banner/e54168d900a-06_Advanced-Full-Body-Checkup_Cat_696x301.jpg",
+    "https://cms-contents.pharmeasy.in/banner/b1bca7940a3-01_Need-a-health-checkup_HP_634x274.jpg",
+    "https://cms-contents.pharmeasy.in/banner/559557ed661-2_IN_1Offer_Cat_696x301.jpg",
+    "https://cms-contents.pharmeasy.in/banner/e0cc190163b-05_Healthy-2022-Full-Body_Cat_696x301.jpg",
+  
+]
+   
+     let images= document.getElementById("images")
+
+    var i = 0;
+     setInterval(()=>{
+      if(i==4){
+          i=0;
+      }
+        images.src= arr[i]
+        i++ 
+    },2000)
+
+    import downloadApp from "./components/download.js"
+
+let download_container = document.getElementById("download")
+download_container.innerHTML = downloadApp()
+
+import paymentMethod from "./components/payment.js"
+
+let payment_container = document.getElementById("payment")
+payment_container.innerHTML= paymentMethod()
+</script>

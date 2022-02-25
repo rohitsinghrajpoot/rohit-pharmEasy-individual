@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Navbar.css">
+    <link rel="stylesheet" href="./css/download.css">
+</head>
+<style>
+    #timerbox{
+      width:60%;
+      height:290px;
+      margin-bottom: 70px;
+      margin-left:240px;
+      margin-top: 100px;
+   }
+   #images{
+       width: 100%;
+       height:100%;
+   }
+   #download{
+       margin-top: 70px;
+   }
+</style>
+<body>
+    <div id="container"></div>
+
+    <div id="timerbox">
+        <image id="images" alt="img"></image>
+    </div>
+
+    <div>
+        <h4>India's No. 1 Medicine Delivery App</h4>
+        <p>The concept of medicine home delivery has been taken to a new level by the PharmEasy online medicine delivery app. You can use the PharmEasy online medicine delivery app to browse through an extensive range of medicines. Each medicine undergoes a 3-step quality check.
+
+            Whatever be your medicinal requirement, you are sure to locate it in this online pharmacy. All you have to do then is to add it to your cart and place the order. In 3 hours*, the medicines will be delivered to you. India’s beloved online medicine delivery app makes sure that you get your medicines in record time because we know how vital time is in any treatment. Sit back, and we will have all your medical necessities delivered to your doorstep.</p>
+            <h4>Online Medicine - Your Online Medical Store in India</h4>
+            <p>Tired of walking all the way to your local medicine store? Worried that going out is risky during the current times? Order medicines online at PharmEasy, India’s trusted online medicine app. With more than 1 lakh medicines always in stock, you are sure to find what you are looking for, and that too at affordable prices!
+
+                Besides, extremely stringent sanitization norms are followed at your favourite online medical store. PharmEasy takes the safety of customers and employees very seriously.</p>
+       <h4>Reasons To Buy Medicine Online From PharmEasy</h4>
+       <p>Here are a few reasons that will convince you to give online medicine order through the PharmEasy app -
+        1,200+ cities and 20,000+ Pin codes served
+        Medicine delivery within 3 hours*
+        1 Lakh+ medicines available
+        Cash on delivery option available
+        Attractive offers
+        Cashback option through wallet
+        Stringent quality checks
+        Garnered the trust of more than 10 million users who have made an online purchase through PharmEasy</p>
+           <h4>Get 3-Step Quality-checked Medicines</h4>
+           <p>PharmEasy is a one-stop-shop for all your healthcare needs. We have 1L+ products for you to choose from. Buy medicines online at affordable prices from the comforts of your home in just a few clicks and get them delivered at your doorstep.
+            The entire process of shopping for medicines is hassle-free and convenient. All you have to do is search for the products you need on our website or app, add to cart and then proceed with the checkout process.
+            With our scheduled refill reminder, you don’t even need to keep track of your refill dates.
+            What’s more, we have great offers, with added discounts and massive e-wallet cashbacks on purchasing medicines!</p>
+    
+        </div>
+
+        <div id="download"></div>
+
+        <h3>Our payment partners</h3>
+
+        <div id="payment"></div>
+</body>
+</html>
+<script type="module">
+
+    import navbar from "./components/navbar.js"
+
+    
+
+    let container_div = document.getElementById("container")
+    container_div.innerHTML=navbar()
+    
+    
+    var arr =[
+    "https://pharmeasy.in/_next/image?url=https%3A%2F%2Fconsumer-app-images.pharmeasy.in%2Fmarketing%2Fcomp_india_covered.jpg&w=640&q=75",
+    "https://pharmeasy.in/_next/image?url=https%3A%2F%2Fconsumer-app-images.pharmeasy.in%2Fmarketing%2Fcomp_50lac.jpg&w=640&q=75",
+    "https://pharmeasy.in/_next/image?url=https%3A%2F%2Fconsumer-app-images.pharmeasy.in%2Fmarketing%2Fcomp_cod.jpg&w=640&q=75",
+    "https://pharmeasy.in/_next/image?url=https%3A%2F%2Fconsumer-app-images.pharmeasy.in%2Fmarketing%2Fcomp_3step.jpg&w=640&q=75",
+  
+]
+   
+     let images= document.getElementById("images")
+
+    var i = 0;
+     setInterval(()=>{
+      if(i==4){
+          i=0;
+      }
+        images.src= arr[i]
+        i++ 
+    },2000)
+     
+    import downloadApp from "./components/download.js"
+
+    let download_container = document.getElementById("download")
+    download_container.innerHTML = downloadApp()
+
+    import paymentMethod from "./components/payment.js"
+
+    let payment_container = document.getElementById("payment")
+    payment_container.innerHTML= paymentMethod()
+</script>
