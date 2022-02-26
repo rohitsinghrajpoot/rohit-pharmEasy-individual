@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Navbar.css">
+    <link rel="stylesheet" href="./css/download.css">
+</head>
+<body>
+    <div id="container"></div>
+
+    <div>
+        <h2>PharmEasy Offers & Coupon Codes</h2>
+        <p>PharmEasy is one of India’s leading online healthcare platforms that allows you to make great savings on your medicines and healthcare needs every day.From finding the prescribed medicine you need to the wellness product that is best suitable for you, PharmEasy is your one-stop destination for all your healthcare needs. Affordable prices offered by our partner retail pharmacies allow you to focus on your and your family’s health while we take care of your budget.
+        <br></br  >We have got the best offers just for you. Watch out this space for the best PharmEasy offers on a range of healthcare products. Find new PharmEasy coupons and many such exciting offer codes updated every day. Simply use the PharmEasy coupon code to avail the best deals and offers. PharmEasy offers amazing payment and cashback deals too for new and existing users. Just apply the PharmEasy promo code at check-out and make the most of these offers.
+    </p>
+    <h3>Download the PharmEasy app today to buy medicines online with great savings.</h3>
+    <h3>Hurry! Avail these exclusive PharmEasy offers now.</h3>
+    </div>
+
+    <div id="download"></div>
+
+    <h3>Our payment partners</h3>
+
+    <div id="payment"></div>
+</body>
+</html>
+<script type="module">
+
+    import navbar from "./components/navbar.js"
+let container_div = document.getElementById("container")
+container_div.innerHTML=navbar()
+
+import downloadApp from "./components/download.js"
+
+let download_container = document.getElementById("download")
+download_container.innerHTML = downloadApp()
+
+import paymentMethod from "./components/payment.js"
+
+let payment_container = document.getElementById("payment")
+payment_container.innerHTML= paymentMethod()
+</script>
