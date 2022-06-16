@@ -25,8 +25,8 @@ To start with the project open the index.html file
     
    # Here are the glimpse on our projects    
  
-(![pharm easy home](https://user-images.githubusercontent.com/95858652/174000731-2e9b43b1-ae48-48ac-bf0a-5b2812bbad71.png)
-)
+![pharm easy home](https://user-images.githubusercontent.com/95858652/174000731-2e9b43b1-ae48-48ac-bf0a-5b2812bbad71.png)
+
 
     User can sign up and login
     
